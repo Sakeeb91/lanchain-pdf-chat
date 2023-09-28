@@ -39,6 +39,10 @@ if uploaded_file is not None:
 
     st.write("Full path of the uploaded file:", temp_file_path)
 
+# initialize session state
+if 'api_key' not in st.session_state:
+    st.session_state.api_key = None
+
 # Ask the user for the OpenAI API key
 api_key = st.text_input('Enter your OpenAI API key:', type='password')
 
