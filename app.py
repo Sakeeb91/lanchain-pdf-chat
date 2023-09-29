@@ -12,7 +12,7 @@ from langchain.agents.agent_toolkits import (
     VectorStoreInfo
 )
 import typing
-typing.Generic = object
+
 
 # Set the title and subtitle of the app
 st.title('🦜🔗 PDF-Chat: Interact with Your PDFs in a Conversational Way')
