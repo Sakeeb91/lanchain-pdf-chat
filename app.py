@@ -5,7 +5,7 @@ from langchain.llms import OpenAI
 from langchain.embeddings import OpenAIEmbeddings
 import streamlit as st
 from langchain.document_loaders import PyPDFLoader
-from langchain.vectorstores import Chroma
+from langchain.vectorstores import Qdrant
 from langchain.agents.agent_toolkits import (
     create_vectorstore_agent,
     VectorStoreToolkit,
@@ -59,8 +59,9 @@ if api_key:
     # Split pages from pdf
     pages = loader.load_and_split()
 
-    # Load documents into vector database aka ChromaDB
-    store = Chroma.from_documents(pages, embeddings, collection_name='Pdf')
+    # Load documents into vector database aka Qdrant
+    store = Qdrant()
+    store.from_documents(pages, embeddings, collection_name='Pdf')
 
     # Create vectorstore info object
     vectorstore_info = VectorStoreInfo(
