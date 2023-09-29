@@ -44,7 +44,7 @@ if 'api_key' not in st.session_state:
     st.session_state.api_key = None
 
 # Ask the user for the OpenAI API key include labels with label visibility off
-api_key = st.text_input('Enter your OpenAI API key', type='password', label_visibility=False)
+api_key = st.text_input('Enter your OpenAI API key', type='password', label_visibility='collapsed')
 
 if api_key:
     # Set the API key for the OpenAI service
