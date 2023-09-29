@@ -13,3 +13,4 @@ torch==1.13.1
 tiktoken
 tokenizers
 tqdm
+sqlite3
